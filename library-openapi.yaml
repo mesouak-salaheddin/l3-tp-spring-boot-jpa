@@ -1,0 +1,305 @@
+openapi: 3.0.3
+info:
+  title: L3 Miage Library API
+  description: |
+    Manage Books and Authors.
+    * Create authors
+    * Create books for an author
+    * Update/delete books individually
+    * Update authors
+    * Add an additional author to a book 
+    * Delete authors (that will delete their books cascadingly)
+    * Search for
+      * authors by name
+      * books by title
+      * books by authors
+  version: 1.0.0
+servers:
+  - url: "http://localhost:8080"
+paths:
+  /api/authors:
+    get:
+      summary: Find all authors, possibly filtered
+      operationId: find-authors
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Author"
+    post:
+      summary: Create a new author
+      operationId: new-author
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/BaseAuthor"
+      responses:
+        201:
+          description: Created
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/Author"
+        400:
+          description: In case the author could not be validated
+  /api/authors/{id}:
+    parameters:
+      - name: id
+        description: Author's id
+        in: path
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get an author
+      operationId: get-author
+      responses:
+        200:
+          description: OK
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/Author"
+
+        404:
+          description: The author was not found
+    put:
+      summary: Update an author
+      description: Will update the author if found
+      operationId: put-author
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/Author"
+      responses:
+        200:
+          description: Updated
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/Author"
+        400:
+          description: In case the author could not be validated
+        404:
+          description: The author was not found
+    delete:
+      summary: Delete an author (and all of its books)
+      description: This endpoint can only be called if the authors do not share authority with another author.
+      operationId: delete-author
+      responses:
+        204:
+          description: Deleted
+        400:
+          description: If this author share authority on a book, then book should be removed first
+        404:
+          description: The author was not found
+  /api/authors/{id}/books:
+    parameters:
+      - name: id
+        description: Author's id
+        in: path
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Find all books for a given author, possibly filtered by name
+      operationId: find-authors-books
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Book"
+        404:
+          description: The author was not found
+    post:
+      summary: Create a new book for a given author
+      operationId: new-authors-book
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/BaseBook"
+      responses:
+        201:
+          description: Created
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/SimpleBook"
+        404:
+          description: The author was not found
+  /api/books:
+    get:
+      summary: Find all books, possibly filtered by name
+      operationId: get-books
+      responses:
+        200:
+          description: OK
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/Book"
+  /api/books/{id}:
+    parameters:
+      - name: id
+        description: Book's id
+        in: path
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get a book
+      operationId: get-book
+      responses:
+        200:
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Book"
+        404:
+          description: The book was not found
+    put:
+      summary: Update a book
+      operationId: update-book
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/SimpleBook"
+      responses:
+        404:
+          description: The book was not found
+    delete:
+      summary: Delete a book
+      operationId: delete-book
+      responses:
+        204:
+          description: Deleted
+        404:
+          description: The book was not found
+
+components:
+  schemas:
+    BaseAuthor:
+      description: An author, with no id (for creation)
+      type: object
+      properties:
+        fullName:
+          type: string
+      required:
+        - fullName
+      example:
+        name: Victor Hugo
+    Author:
+      description: An author, for all usage except creation
+      allOf:
+        - $ref: "#/components/schemas/BaseAuthor"
+        - type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            fullName:
+              type: string
+          required:
+            - id
+          example:
+            id: 1
+            name: Victor Hugo
+    BaseBook:
+      description: A book, with no id (for creation)
+      type: object
+      properties:
+        title:
+          type: string
+        isbn:
+          type: integer
+          format: int64
+          minLength: 10
+          maxLength: 13
+        editor:
+          type: string
+        year:
+          type: integer
+          format: int32
+          minLength: 4
+          maxLength: 4
+        language:
+          type: string
+          enum:
+            - FRENCH
+            - ENGLISH
+          default: FRENCH
+      required:
+        - title
+        - year
+      example:
+        title: Les Misérables
+        isbn: 9782266199261
+        editor: Pocket
+        year: 2009
+        language: FRENCH
+    SimpleBook:
+      description: A book, with an id (for update)
+      allOf:
+        - $ref: "#/components/schemas/BaseBook"
+        - type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+          required:
+            - id
+      example:
+        id: 1
+        title: Les Misérables
+        isbn: 9782266199261
+        editor: Pocket
+        year: 2009
+        language: FRENCH
+    Book:
+      description: A book with all properties set
+      allOf:
+        - $ref: "#/components/schemas/SimpleBook"
+        - type: object
+          properties:
+            authors:
+              type: array
+              items:
+                $ref: "#/components/schemas/Author"
+      example:
+        id: 1
+        title: Les Misérables
+        isbn: 9782266199261
+        editor: Pocket
+        year: 2009
+        language: FRENCH
+        authors:
+          - id: 1
+            name: Victor Hugo
