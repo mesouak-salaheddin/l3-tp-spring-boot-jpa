@@ -7,11 +7,11 @@ import java.util.Collection;
 
 @Mapper(componentModel = "spring")
 public interface AuthorMapper {
-    AuthorDTO entityToDTO(Author project);
+    AuthorDTO entityToDTO(Author author);
 
-    Collection<AuthorDTO> entityToDTO(Iterable<Author> project);
+    Collection<AuthorDTO> entityToDTO(Iterable<Author> authors);
 
-    Author dtoToEntity(AuthorDTO project);
+    Author dtoToEntity(AuthorDTO author);
 
-    Collection<Author> dtoToEntity(Iterable<AuthorDTO> projects);
+    Collection<Author> dtoToEntity(Iterable<AuthorDTO> authors);
 }

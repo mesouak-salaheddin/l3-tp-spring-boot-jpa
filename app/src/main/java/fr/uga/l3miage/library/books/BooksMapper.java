@@ -7,11 +7,11 @@ import java.util.Collection;
 
 @Mapper(componentModel = "spring")
 public interface BooksMapper {
-    BookDTO entityToDTO(Book project);
+    BookDTO entityToDTO(Book book);
 
-    Collection<BookDTO> entityToDTO(Iterable<Book> project);
+    Collection<BookDTO> entityToDTO(Iterable<Book> books);
 
-    Book dtoToEntity(BookDTO project);
+    Book dtoToEntity(BookDTO book);
 
-    Collection<Book> dtoToEntity(Iterable<BookDTO> projects);
+    Collection<Book> dtoToEntity(Iterable<BookDTO> books);
 }

@@ -14,11 +14,13 @@ import java.util.Collection;
 @RequestMapping(value = "/api", produces = "application/json")
 public class BooksController {
 
+    private final AuthorService authorService;
     private final BookService bookService;
     private final BooksMapper booksMapper;
 
     @Autowired
-    public BooksController(BookService bookService, BooksMapper booksMapper) {
+    public BooksController(AuthorService authorService, BookService bookService, BooksMapper booksMapper) {
+        this.authorService = authorService;
         this.bookService = bookService;
         this.booksMapper = booksMapper;
     }
