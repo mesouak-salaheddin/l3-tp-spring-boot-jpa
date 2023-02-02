@@ -21,6 +21,22 @@ public interface AuthorService extends CRUDService<Author, Long> {
      * @param book the book to add
      * @return an updated {@link Author}
      */
-    Author addBook(Author author, Book book);
+    Author addBook(Author author, Book book) throws EntityNotFoundException;
 
+    /**
+     * @deprecated use {@link #deleteAuthor(Long)} instead
+     */
+    @Override
+    @Deprecated
+    default void delete(Long id) {
+        throw new UnsupportedOperationException("use deleteAuthor(Long) instead");
+    }
+
+    /**
+     * Deletes an author
+     * @param id id of the author to delete
+     * @throws EntityNotFoundException when the entity do not already exists
+     * @throws DeleteAuthorException when an author has books that are co-authored
+     */
+    void deleteAuthor(Long id) throws EntityNotFoundException, DeleteAuthorException;
 }

@@ -26,7 +26,7 @@ public class AuthorsController {
         if (query == null) {
             authors = authorService.list();
         } else {
-            authors =authorService.searchByName(query);
+            authors = authorService.searchByName(query);
         }
         return authors.stream()
                 .map(authorMapper::entityToDTO)

@@ -49,19 +49,14 @@ public class BookServiceMockImpl implements BookService {
     }
 
     @Override
-    public Collection<Book> getByAuthor(Long id) throws EntityNotFoundException {
-        return getAuthor(id).getBooks();
+    public Collection<Book> getByAuthor(Long authorId) throws EntityNotFoundException {
+        return AuthorServiceMockImpl.doGet(authorId).getBooks();
     }
 
     @Override
-    public Collection<Book> findByAuthor(Long id, String title) throws EntityNotFoundException {
-        getAuthor(id);
-        return filterBooks(MockData.authors.get(id).getBooks(), title);
-    }
-
-    private static Author getAuthor(Long id) throws EntityNotFoundException {
-        return Optional.ofNullable(MockData.authors.get(id))
-                .orElseThrow(() -> new EntityNotFoundException("Cannot find author with id: " + id));
+    public Collection<Book> findByAuthor(Long authorId, String title) throws EntityNotFoundException {
+        AuthorServiceMockImpl.doGet(authorId);
+        return filterBooks(MockData.authors.get(authorId).getBooks(), title);
     }
 
 
