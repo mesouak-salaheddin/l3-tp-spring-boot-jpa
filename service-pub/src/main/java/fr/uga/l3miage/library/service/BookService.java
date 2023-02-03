@@ -1,6 +1,5 @@
 package fr.uga.l3miage.library.service;
 
-import fr.uga.l3miage.data.domain.Author;
 import fr.uga.l3miage.data.domain.Book;
 import fr.uga.l3miage.library.service.base.BaseService;
 
@@ -11,8 +10,9 @@ public interface BookService extends BaseService<Book, Long> {
 
     /**
      * Save a book by adding it to an author. Then adds the book to the author, thus implementing the bidirectional many-to-many association
+     *
      * @param authorId the other id
-     * @param book the book to add
+     * @param book     the book to add
      * @return the book with an id set
      * @throws EntityNotFoundException if the author do not exist
      */
@@ -37,7 +37,8 @@ public interface BookService extends BaseService<Book, Long> {
 
     /**
      * Find books for a given author
-     * @param id author's id
+     *
+     * @param id    author's id
      * @param title the title of the book or a part of it (case-insensitive)
      * @return all books belonging to the author with a matching title
      * @throws EntityNotFoundException if the author do not exist
@@ -55,7 +56,8 @@ public interface BookService extends BaseService<Book, Long> {
 
     /**
      * Add an author to a book
-     * @param bookId book id on witch to add the author
+     *
+     * @param bookId   book id on witch to add the author
      * @param authorId author id to add to the book
      * @return the book updated
      * @throws EntityNotFoundException if either the book or the author is not found

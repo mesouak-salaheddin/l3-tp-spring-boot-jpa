@@ -1,6 +1,6 @@
 package fr.uga.l3miage.data.domain;
 
-public class Librarian extends Person{
+public class Librarian extends Person {
 
     private Librarian manager;
 

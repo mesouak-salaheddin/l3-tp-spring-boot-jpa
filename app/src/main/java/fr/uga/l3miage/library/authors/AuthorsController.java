@@ -2,9 +2,14 @@ package fr.uga.l3miage.library.authors;
 
 import fr.uga.l3miage.data.domain.Author;
 import fr.uga.l3miage.library.books.BookDTO;
+import fr.uga.l3miage.library.books.BooksMapper;
 import fr.uga.l3miage.library.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.Collection;
 import java.util.Collections;
 
@@ -44,7 +49,8 @@ public class AuthorsController {
         return null;
     }
 
-    public AuthorDTO updateAuthor(AuthorDTO author) {
+    public AuthorDTO updateAuthor(AuthorDTO author, Long id) {
+        // attention AuthorDTO.id() doit être égale à id, sinon la requête utilisateur est mauvaise
         return null;
     }
 
@@ -52,7 +58,7 @@ public class AuthorsController {
         // unimplemented... yet!
     }
 
-    public Collection<BookDTO> books(Long author) {
+    public Collection<BookDTO> books(Long authorId) {
         return Collections.emptyList();
     }
 

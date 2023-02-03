@@ -8,7 +8,7 @@ public class Book {
     private Long id;
     private String title;
     private long isbn;
-    private String editor;
+    private String publisher;
     private short year;
     private Language language;
     private Set<Author> authors;
@@ -37,12 +37,12 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public String getEditor() {
-        return editor;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setEditor(String editor) {
-        this.editor = editor;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
     public short getYear() {

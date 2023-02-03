@@ -16,7 +16,6 @@ public interface BooksMapper {
     Collection<Book> dtoToEntity(Iterable<BookDTO> books);
 
     @EnumMapping(nameTransformationStrategy = "case", configuration = "lower")
-
     String enumToString(Book.Language language);
 
     @InheritInverseConfiguration

@@ -6,7 +6,7 @@ import fr.uga.l3miage.library.service.DeleteAuthorException;
 import fr.uga.l3miage.library.service.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 
 class AuthorServiceMockImplTest {
@@ -38,14 +38,14 @@ class AuthorServiceMockImplTest {
             authorServiceMock.delete(author2.getId());
             fail("should have raised error");
         } catch (DeleteAuthorException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
 
         try {
             authorServiceMock.delete(author1.getId());
             fail("should have raised error");
         } catch (DeleteAuthorException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
 
     }

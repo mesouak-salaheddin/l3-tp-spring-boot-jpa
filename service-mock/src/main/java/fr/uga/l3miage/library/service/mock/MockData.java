@@ -36,8 +36,8 @@ public class MockData {
         jpa.setId(-1L);
         jpa.setTitle("The Art of JPA");
         jpa.setIsbn(2145673168735453L);
-        jpa.setEditor("Dunod");
-        jpa.setYear((short)2023);
+        jpa.setPublisher("Dunod");
+        jpa.setYear((short) 2023);
         jpa.setLanguage(Book.Language.ENGLISH);
 
         jpa.addAuthor(me);
