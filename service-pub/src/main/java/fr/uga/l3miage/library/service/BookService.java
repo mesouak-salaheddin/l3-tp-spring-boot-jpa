@@ -1,11 +1,21 @@
 package fr.uga.l3miage.library.service;
 
 import fr.uga.l3miage.data.domain.Book;
-import fr.uga.l3miage.library.service.base.CRUDService;
+import fr.uga.l3miage.library.service.base.BaseService;
 
 import java.util.Collection;
 
-public interface BookService extends CRUDService<Book, Long> {
+public interface BookService extends BaseService<Book, Long> {
+
+
+    /**
+     * Save a book by adding it to an author. Then adds the book to the author, thus implementing the bidirectional many-to-many association
+     * @param authorId the other id
+     * @param book the book to add
+     * @return the book with an id set
+     * @throws EntityNotFoundException if the author do not exist
+     */
+    Book save(Long authorId, Book book) throws EntityNotFoundException;
 
     /**
      * Find books by title. Title can partial, will be matched in case-insensitive fashion
@@ -33,4 +43,11 @@ public interface BookService extends CRUDService<Book, Long> {
      */
     Collection<Book> findByAuthor(Long id, String title) throws EntityNotFoundException;
 
+    /**
+     * Deletes a book
+     *
+     * @param id id of the book to delete
+     * @throws EntityNotFoundException when the entity do not already exists
+     */
+    void delete(Long id) throws EntityNotFoundException;
 }

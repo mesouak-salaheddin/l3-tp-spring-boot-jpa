@@ -5,21 +5,13 @@ import fr.uga.l3miage.library.service.EntityNotFoundException;
 import java.util.Collection;
 
 /**
- * This interface abstract all create/read update/delete operation that can occur on a persistent object.
+ * This interface to read/update persistent object.
  *
  * @param <O> the type of persistence object
  * @param <I> type of the identifier
  */
-public interface CRUDService<O, I> {
+public interface BaseService<O, I> {
 
-
-    /**
-     * Saves a transient object
-     *
-     * @param object to be saved
-     * @return the object with the identifier valued
-     */
-    O save(O object);
 
     /**
      * get a transient object
@@ -45,13 +37,5 @@ public interface CRUDService<O, I> {
      * @throws fr.uga.l3miage.library.service.EntityNotFoundException when the entity do not already exists
      */
     O update(O object) throws EntityNotFoundException;
-
-    /**
-     * Deletes an object
-     *
-     * @param id id of theobject to delete
-     * @throws fr.uga.l3miage.library.service.EntityNotFoundException when the entity do not already exists
-     */
-    void delete(I id) throws EntityNotFoundException;
 
 }

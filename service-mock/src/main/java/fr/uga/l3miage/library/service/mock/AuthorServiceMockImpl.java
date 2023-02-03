@@ -23,13 +23,6 @@ public class AuthorServiceMockImpl implements AuthorService {
                 .toList();
     }
 
-    @Override
-    public Author addBook(Author author, Book book) throws EntityNotFoundException {
-        Author owner = get(author.getId());
-        owner.addBook(book);
-        book.addAuthor(author);
-        return author;
-    }
 
     @Override
     public Author save(Author author) {
@@ -61,19 +54,28 @@ public class AuthorServiceMockImpl implements AuthorService {
     }
 
     @Override
-    public void deleteAuthor(Long id) throws EntityNotFoundException, DeleteAuthorException {
+    public void delete(Long id) throws EntityNotFoundException, DeleteAuthorException {
         Set<Book> books = get(id)
                 .getBooks();
         if (books != null) {
-            books.stream()
+
+            Optional<Integer> bookWithManyAuthor = books.stream()
                     .map(Book::getAuthors)
                     .filter(Objects::nonNull)
                     .map(Collection::size)
                     .filter(s -> s > 1)
-                    .findFirst()
-                    .orElseThrow(() -> new DeleteAuthorException("cannot delete author, one or several book are co-authored"));
+                    .findFirst();
+
+            if (bookWithManyAuthor.isPresent()) {
+                throw new DeleteAuthorException("cannot delete author, one or several books are co-authored");
+            }
+
+            books.stream().map(Book::getId).forEach(MockData.books::remove);
+
         }
+
         MockData.authors.remove(id);
+
 
     }
 

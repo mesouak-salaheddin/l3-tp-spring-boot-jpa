@@ -2,8 +2,10 @@ package fr.uga.l3miage.library.service.mock;
 
 import fr.uga.l3miage.data.domain.Author;
 import fr.uga.l3miage.data.domain.Book;
+import fr.uga.l3miage.library.service.AuthorService;
 import fr.uga.l3miage.library.service.BookService;
 import fr.uga.l3miage.library.service.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -12,10 +14,23 @@ import java.util.Optional;
 @Component
 public class BookServiceMockImpl implements BookService {
 
-     @Override
-    public Book save(Book book) {
+    private final AuthorService authorService;
+
+    @Autowired
+    public BookServiceMockImpl(AuthorService authorService) {
+        this.authorService = authorService;
+    }
+
+    @Override
+    public Book save(Long authorId, Book book) throws EntityNotFoundException {
         book.setId(MockData.getNextId(Book.class));
-        doUpdate(book);
+        doSave(book);
+
+        Author author = authorService.get(authorId);
+        author.addBook(book);
+        book.addAuthor(author);
+
+        authorService.update(author);
         return book;
     }
 
@@ -33,7 +48,7 @@ public class BookServiceMockImpl implements BookService {
     @Override
     public Book update(Book book) throws EntityNotFoundException {
         get(book.getId());
-        doUpdate(book);
+        doSave(book);
         return MockData.books.get(book.getId());
     }
 
@@ -60,7 +75,7 @@ public class BookServiceMockImpl implements BookService {
     }
 
 
-    private static void doUpdate(Book book) {
+    private static void doSave(Book book) {
         MockData.books.put(book.getId(), book);
     }
 
