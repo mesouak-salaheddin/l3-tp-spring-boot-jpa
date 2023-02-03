@@ -3,7 +3,7 @@
 Ceci est un TP a destination des L3 Miage de l'UGA (IM²AG). 
 
 Il peut être librement par quiquonque souhaite et sans limitation à l'exception de référencé ce répository
-https://github.com/bordigoni/jpa-spring-boot
+https://github.com/bordigoni/l3-tp-spring-boot-jpa
 
 Ce TP nécessite: 
 * Java 17
