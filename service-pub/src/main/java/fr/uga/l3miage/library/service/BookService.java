@@ -1,5 +1,6 @@
 package fr.uga.l3miage.library.service;
 
+import fr.uga.l3miage.data.domain.Author;
 import fr.uga.l3miage.data.domain.Book;
 import fr.uga.l3miage.library.service.base.BaseService;
 
@@ -50,4 +51,14 @@ public interface BookService extends BaseService<Book, Long> {
      * @throws EntityNotFoundException when the entity do not already exists
      */
     void delete(Long id) throws EntityNotFoundException;
+
+
+    /**
+     * Add an author to a book
+     * @param bookId book id on witch to add the author
+     * @param authorId author id to add to the book
+     * @return the book updated
+     * @throws EntityNotFoundException if either the book or the author is not found
+     */
+    Book addAuthor(Long bookId, Long authorId) throws EntityNotFoundException;
 }

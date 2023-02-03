@@ -26,13 +26,12 @@ public class BookServiceMockImpl implements BookService {
         book.setId(MockData.getNextId(Book.class));
         doSave(book);
 
-        Author author = authorService.get(authorId);
-        author.addBook(book);
-        book.addAuthor(author);
+        Author author = bind(authorId, book);
 
         authorService.update(author);
         return book;
     }
+
 
     @Override
     public Book get(Long id) throws EntityNotFoundException {
@@ -50,6 +49,12 @@ public class BookServiceMockImpl implements BookService {
         get(book.getId());
         doSave(book);
         return MockData.books.get(book.getId());
+    }
+
+    public Book addAuthor(Long bookId, Long authorId) throws EntityNotFoundException {
+        var book = get(bookId);
+        bind(authorId, book);
+        return book;
     }
 
     @Override
@@ -75,11 +80,18 @@ public class BookServiceMockImpl implements BookService {
     }
 
 
+    private Author bind(Long authorId, Book book) throws EntityNotFoundException {
+        Author author = authorService.get(authorId);
+        author.addBook(book);
+        book.addAuthor(author);
+        return author;
+    }
+
     private static void doSave(Book book) {
         MockData.books.put(book.getId(), book);
     }
 
-    Collection<Book> filterBooks(Collection<Book> books, String title) {
+    private static Collection<Book> filterBooks(Collection<Book> books, String title) {
         return books.stream()
                 .filter(book -> book.getTitle().toLowerCase().contains(title.toLowerCase()))
                 .toList();

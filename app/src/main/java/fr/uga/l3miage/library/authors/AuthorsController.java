@@ -14,11 +14,13 @@ public class AuthorsController {
 
     private final AuthorService authorService;
     private final AuthorMapper authorMapper;
+    private final BooksMapper booksMapper;
 
     @Autowired
-    public AuthorsController(AuthorService authorService, AuthorMapper authorMapper) {
+    public AuthorsController(AuthorService authorService, AuthorMapper authorMapper, BooksMapper booksMapper) {
         this.authorService = authorService;
         this.authorMapper = authorMapper;
+        this.booksMapper = booksMapper;
     }
 
     @GetMapping("/authors")
