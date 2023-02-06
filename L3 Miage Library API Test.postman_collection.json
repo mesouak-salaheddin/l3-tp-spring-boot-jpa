@@ -46,12 +46,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors",
+					"raw": "{{baseUrl}}/api/v1/authors",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors"
 					]
 				}
@@ -72,12 +72,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -109,12 +109,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -173,12 +173,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors",
+					"raw": "{{baseUrl}}/api/v1/authors",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors"
 					]
 				}
@@ -199,12 +199,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -236,12 +236,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -297,12 +297,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors",
+					"raw": "{{baseUrl}}/api/v1/authors",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors"
 					]
 				}
@@ -323,12 +323,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -360,12 +360,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -411,12 +411,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}"
 					]
@@ -429,12 +429,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -465,12 +465,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -521,12 +521,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/123456789",
+					"raw": "{{baseUrl}}/api/v1/authors/123456789",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"123456789"
 					]
@@ -539,12 +539,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -575,12 +575,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -633,12 +633,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/authors",
+					"raw": "{{baseUrl}}/api/v1/authors",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors"
 					]
 				}
@@ -650,12 +650,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -686,12 +686,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -758,12 +758,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}"
 					]
@@ -786,12 +786,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -831,12 +831,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -876,12 +876,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -945,12 +945,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/-1",
+					"raw": "{{baseUrl}}/api/v1/authors/-1",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"-1"
 					]
@@ -973,12 +973,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -1018,12 +1018,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -1063,12 +1063,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -1146,12 +1146,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -1174,12 +1174,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1220,12 +1220,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1305,12 +1305,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -1333,12 +1333,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1379,12 +1379,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1449,12 +1449,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -1477,12 +1477,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1523,12 +1523,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1593,12 +1593,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -1621,12 +1621,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1667,12 +1667,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1737,12 +1737,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -1765,12 +1765,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1811,12 +1811,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1881,12 +1881,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -1909,12 +1909,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -1955,12 +1955,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -2025,12 +2025,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/123456789/books",
+					"raw": "{{baseUrl}}/api/v1/authors/123456789/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"123456789",
 						"books"
@@ -2053,12 +2053,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -2099,12 +2099,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -2158,12 +2158,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/books/{{bookId}}",
+					"raw": "{{baseUrl}}/api/v1/books/{{bookId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"books",
 						"{{bookId}}"
 					]
@@ -2176,12 +2176,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/books/:id",
+							"raw": "{{baseUrl}}/api/v1/books/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"books",
 								":id"
 							],
@@ -2212,12 +2212,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/books/:id",
+							"raw": "{{baseUrl}}/api/v1/books/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"books",
 								":id"
 							],
@@ -2284,12 +2284,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/books/{{bookId}}",
+					"raw": "{{baseUrl}}/api/v1/books/{{bookId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"books",
 						"{{bookId}}"
 					]
@@ -2311,12 +2311,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/books/:id",
+							"raw": "{{baseUrl}}/api/v1/books/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"books",
 								":id"
 							],
@@ -2376,12 +2376,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/books/{{bookId}}",
+					"raw": "{{baseUrl}}/api/v1/books/{{bookId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"books",
 						"{{bookId}}"
 					]
@@ -2403,12 +2403,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/books/:id",
+							"raw": "{{baseUrl}}/api/v1/books/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"books",
 								":id"
 							],
@@ -2461,12 +2461,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/books",
+					"raw": "{{baseUrl}}/api/v1/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"books"
 					]
 				}
@@ -2478,12 +2478,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/books",
+							"raw": "{{baseUrl}}/api/v1/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"books"
 							]
 						}
@@ -2544,12 +2544,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -2572,12 +2572,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -2618,12 +2618,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -2677,12 +2677,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/books?q=peripheral",
+					"raw": "{{baseUrl}}/api/v1/books?q=peripheral",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"books"
 					],
 					"query": [
@@ -2700,12 +2700,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/books",
+							"raw": "{{baseUrl}}/api/v1/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"books"
 							]
 						}
@@ -2764,12 +2764,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors",
+					"raw": "{{baseUrl}}/api/v1/authors",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors"
 					]
 				}
@@ -2790,12 +2790,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -2827,12 +2827,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -2893,12 +2893,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -2921,12 +2921,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -2967,12 +2967,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -3043,12 +3043,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -3071,12 +3071,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -3117,12 +3117,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id/books",
+							"raw": "{{baseUrl}}/api/v1/authors/:id/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id",
 								"books"
@@ -3176,12 +3176,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{authorId}}/books",
+					"raw": "{{baseUrl}}/api/v1/authors/{{authorId}}/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{authorId}}",
 						"books"
@@ -3195,12 +3195,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/books",
+							"raw": "{{baseUrl}}/api/v1/books",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"books"
 							]
 						}
@@ -3260,12 +3260,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors",
+					"raw": "{{baseUrl}}/api/v1/authors",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors"
 					]
 				}
@@ -3286,12 +3286,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -3323,12 +3323,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -3388,12 +3388,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/books/{{newBookId}}/authors",
+					"raw": "{{baseUrl}}/api/v1/books/{{newBookId}}/authors",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"books",
 						"{{newBookId}}",
 						"authors"
@@ -3416,12 +3416,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -3453,12 +3453,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors",
+							"raw": "{{baseUrl}}/api/v1/authors",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors"
 							]
 						}
@@ -3514,12 +3514,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/authors/{{newAuthorId}}",
+					"raw": "{{baseUrl}}/api/v1/authors/{{newAuthorId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"authors",
 						"{{newAuthorId}}"
 					]
@@ -3542,12 +3542,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -3587,12 +3587,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -3632,12 +3632,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -3701,12 +3701,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/books/{{newBookId}}",
+					"raw": "{{baseUrl}}/api/v1/books/{{newBookId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
+						"api", "v1",
 						"books",
 						"{{newBookId}}"
 					]
@@ -3729,12 +3729,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -3774,12 +3774,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],
@@ -3819,12 +3819,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/authors/:id",
+							"raw": "{{baseUrl}}/api/v1/authors/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"api",
+								"api", "v1",
 								"authors",
 								":id"
 							],

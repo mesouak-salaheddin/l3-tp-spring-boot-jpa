@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 @RestController
-@RequestMapping(value = "/api", produces = "application/json")
+@RequestMapping(value = "/api/v1", produces = "application/json")
 public class AuthorsController {
 
     private final AuthorService authorService;

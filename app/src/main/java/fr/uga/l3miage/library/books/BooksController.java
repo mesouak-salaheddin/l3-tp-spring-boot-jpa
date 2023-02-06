@@ -23,7 +23,7 @@ public class BooksController {
         this.booksMapper = booksMapper;
     }
 
-    @GetMapping("/books")
+    @GetMapping("/books/v1")
     public Collection<BookDTO> books(@RequestParam("q") String query) {
         return null;
     }
