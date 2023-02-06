@@ -2,7 +2,7 @@
 
 Ceci est un TP a destination des L3 Miage de l'UGA (IM²AG). 
 
-Il peut être librement par quiquonque souhaite et sans limitation à l'exception de référencé ce répository
+Il peut être librement par quiquonque souhaite et sans limitation à condition de citer la source :
 https://github.com/bordigoni/l3-tp-spring-boot-jpa
 
 Ce TP nécessite: 
@@ -29,7 +29,7 @@ Vous aurez en charge de gérer les operations de creation, modification, effacem
 
 *ATTENTION* la relation entre livres et auteurs est de type many-to-many. 
 
-```mermaid
+```mermaid 
 classDiagram
     Book "0..*" -- "1..*" Author
     class Author {
@@ -77,7 +77,7 @@ Le projet contient 5 modules:
 
 Vous ne modifirez que le module app, mais vous aurez besoin de consulter `data` et `service-pub` pour mieux comprendre
 
-```mermaid
+```mermaid 
 graph TD
     A[app - spring boot] --> |depends on| B[service pub] --> |depends on| C[data]
     B --> |implemented by| D[service-mock]
