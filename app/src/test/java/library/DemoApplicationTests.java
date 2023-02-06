@@ -32,14 +32,14 @@ class DemoApplicationTests {
     }
 
     @Test
-    void apiResponse() {
-        ResponseEntity<String> response = this.restTemplate.getForEntity("/api", String.class);
+    void apiV1Response() {
+        ResponseEntity<String> response = this.restTemplate.getForEntity("/api/v1", String.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test
     void authorsResponse() {
-        var list = this.restTemplate.getForObject("/api/authors", List.class);
+        var list = this.restTemplate.getForObject("/api/v1/authors", List.class);
         assertThat(list).isNotEmpty();
     }
 }
