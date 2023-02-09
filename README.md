@@ -133,6 +133,7 @@ Vous n'avez **PAS** a implémenter:
 * les services
 * les DTO
 * le mapping DTO <==> objects de domaine
+* le endpoints `/api/v1/authors` qui fonctionne déjà et renvoie déjà quelques données.
 
 #### Vérifier le contrat d'API
 
@@ -172,14 +173,14 @@ L'évaluation se fera:
 
 ### Bonus
 
-Vous rendrez compte qu'un endpoint est manquant !
+Vous vous rendrez compte (du moins je l'espère) qu'un des endpoint est manquant!
 
-* ajoutez le à la spec OpenAPI
-* implementez-le
+* Ajoutez-le à la spec OpenAPI
+* Implementez-le
 
-Plusieurs indice peuvent trahir ça présence.
+Plusieurs indices peuvent trahir sa présence.
 
-Si il n'est pas implémenté, alors vous ne pourrez pas executer tous les tests d'un coup.
+Attention, ne soyez pas surpris, si il n'est pas implémenté, alors les tests de la collection Postman ne passerons pas tous.
 
 ## PARTIE 2: JPA
 
