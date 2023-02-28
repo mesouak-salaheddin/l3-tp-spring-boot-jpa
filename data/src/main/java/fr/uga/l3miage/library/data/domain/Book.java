@@ -1,6 +1,7 @@
-package fr.uga.l3miage.data.domain;
+package fr.uga.l3miage.library.data.domain;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Book {
@@ -17,9 +18,6 @@ public class Book {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -79,5 +77,18 @@ public class Book {
     public enum Language {
         FRENCH,
         ENGLISH
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return isbn == book.isbn && year == book.year && Objects.equals(title, book.title) && Objects.equals(publisher, book.publisher) && language == book.language && Objects.equals(authors, book.authors);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, isbn, publisher, year, language, authors);
     }
 }

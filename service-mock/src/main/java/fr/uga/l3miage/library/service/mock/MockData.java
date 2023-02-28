@@ -1,7 +1,7 @@
 package fr.uga.l3miage.library.service.mock;
 
-import fr.uga.l3miage.data.domain.Author;
-import fr.uga.l3miage.data.domain.Book;
+import fr.uga.l3miage.library.data.domain.Author;
+import fr.uga.l3miage.library.data.domain.Book;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

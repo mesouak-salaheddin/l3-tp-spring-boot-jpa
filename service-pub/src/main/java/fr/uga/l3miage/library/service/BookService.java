@@ -1,6 +1,6 @@
 package fr.uga.l3miage.library.service;
 
-import fr.uga.l3miage.data.domain.Book;
+import fr.uga.l3miage.library.data.domain.Book;
 import fr.uga.l3miage.library.service.base.BaseService;
 
 import java.util.Collection;

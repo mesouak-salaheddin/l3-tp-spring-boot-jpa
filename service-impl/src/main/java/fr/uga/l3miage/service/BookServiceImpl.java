@@ -1,54 +1,53 @@
-package fr.uga.l3miage.library.service.mock;
+package fr.uga.l3miage.service;
 
 import fr.uga.l3miage.library.data.domain.Author;
 import fr.uga.l3miage.library.data.domain.Book;
+import fr.uga.l3miage.library.data.repo.BookRepository;
 import fr.uga.l3miage.library.service.AuthorService;
 import fr.uga.l3miage.library.service.BookService;
 import fr.uga.l3miage.library.service.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Optional;
 
-@Component
-public class BookServiceMockImpl implements BookService {
+@Service
+@Transactional
+public class BookServiceImpl implements BookService {
 
     private final AuthorService authorService;
+    private final BookRepository bookRepository;
 
     @Autowired
-    public BookServiceMockImpl(AuthorService authorService) {
+    public BookServiceImpl(AuthorService authorService, BookRepository bookRepository) {
         this.authorService = authorService;
+        this.bookRepository = bookRepository;
     }
 
     @Override
     public Book save(Long authorId, Book book) throws EntityNotFoundException {
-        book.setId(MockData.getNextId(Book.class));
-        doSave(book);
-
-        Author author = bind(authorId, book);
-
-        authorService.update(author);
+        bookRepository.save(book);
+        bind(authorId, book);
         return book;
     }
 
 
     @Override
     public Book get(Long id) throws EntityNotFoundException {
-        return Optional.ofNullable(MockData.books.get(id))
+        return Optional.ofNullable(bookRepository.get(id))
                 .orElseThrow(() -> new EntityNotFoundException("Cannot find book with id: " + id));
     }
 
     @Override
     public Collection<Book> list() {
-        return MockData.books.values().stream().toList();
+        return bookRepository.all();
     }
 
     @Override
     public Book update(Book book) throws EntityNotFoundException {
-        get(book.getId());
-        doSave(book);
-        return MockData.books.get(book.getId());
+        return bookRepository.save(book);
     }
 
     public Book addAuthor(Long bookId, Long authorId) throws EntityNotFoundException {
@@ -59,42 +58,31 @@ public class BookServiceMockImpl implements BookService {
 
     @Override
     public void delete(Long id) throws EntityNotFoundException {
-        get(id);
-        MockData.books.remove(id);
+        Book book = get(id);
+        bookRepository.delete(book);
     }
 
     @Override
     public Collection<Book> findByTitle(String title) {
-        return filterBooks(MockData.books.values(), title);
+        return bookRepository.findByContainingTitle(title);
     }
 
     @Override
     public Collection<Book> getByAuthor(Long authorId) throws EntityNotFoundException {
-        return AuthorServiceMockImpl.doGet(authorId).getBooks();
+        return authorService.get(authorId).getBooks();
     }
 
     @Override
     public Collection<Book> findByAuthor(Long authorId, String title) throws EntityNotFoundException {
-        AuthorServiceMockImpl.doGet(authorId);
-        return filterBooks(MockData.authors.get(authorId).getBooks(), title);
+        return bookRepository.findByAuthorIdAndContainingTitle(authorId, title);
     }
 
 
-    private Author bind(Long authorId, Book book) throws EntityNotFoundException {
+    private void bind(Long authorId, Book book) throws EntityNotFoundException {
         Author author = authorService.get(authorId);
         author.addBook(book);
         book.addAuthor(author);
-        return author;
     }
 
-    private static void doSave(Book book) {
-        MockData.books.put(book.getId(), book);
-    }
-
-    private static Collection<Book> filterBooks(Collection<Book> books, String title) {
-        return books.stream()
-                .filter(book -> book.getTitle().toLowerCase().contains(title.toLowerCase()))
-                .toList();
-    }
 
 }

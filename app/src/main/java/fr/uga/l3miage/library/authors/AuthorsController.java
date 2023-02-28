@@ -1,6 +1,6 @@
 package fr.uga.l3miage.library.authors;
 
-import fr.uga.l3miage.data.domain.Author;
+import fr.uga.l3miage.library.data.domain.Author;
 import fr.uga.l3miage.library.books.BookDTO;
 import fr.uga.l3miage.library.books.BooksMapper;
 import fr.uga.l3miage.library.service.AuthorService;

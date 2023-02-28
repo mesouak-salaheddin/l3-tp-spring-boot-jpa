@@ -75,9 +75,6 @@
     <profiles>
         <profile>
             <id>mock</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <dependencies>
                 <dependency>
                     <groupId>fr.uga.l3miage</groupId>
@@ -88,6 +85,9 @@
         </profile>
         <profile>
             <id>impl</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <dependencies>
                 <dependency>
                     <groupId>fr.uga.l3miage</groupId>

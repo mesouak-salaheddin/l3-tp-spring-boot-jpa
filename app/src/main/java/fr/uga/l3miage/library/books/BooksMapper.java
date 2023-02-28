@@ -1,6 +1,6 @@
 package fr.uga.l3miage.library.books;
 
-import fr.uga.l3miage.data.domain.Book;
+import fr.uga.l3miage.library.data.domain.Book;
 import org.mapstruct.*;
 
 import java.util.Collection;

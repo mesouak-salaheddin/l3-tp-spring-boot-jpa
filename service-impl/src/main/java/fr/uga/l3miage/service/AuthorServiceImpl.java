@@ -1,61 +1,69 @@
-package fr.uga.l3miage.library.service.mock;
+package fr.uga.l3miage.service;
 
 import fr.uga.l3miage.library.data.domain.Author;
 import fr.uga.l3miage.library.data.domain.Book;
+import fr.uga.l3miage.library.data.repo.AuthorRepository;
 import fr.uga.l3miage.library.service.AuthorService;
+import fr.uga.l3miage.library.service.BookService;
 import fr.uga.l3miage.library.service.DeleteAuthorException;
 import fr.uga.l3miage.library.service.EntityNotFoundException;
+import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 
-@Component
-public class AuthorServiceMockImpl implements AuthorService {
+@Service
+@Transactional
+public class AuthorServiceImpl implements AuthorService {
+
+    private final AuthorRepository authorRepository;
+    private final BookService bookService;
+
+    @Autowired
+    public AuthorServiceImpl(AuthorRepository authorRepository, BookService bookService) {
+        this.authorRepository = authorRepository;
+        this.bookService = bookService;
+    }
 
     @Override
     public Collection<Author> searchByName(String name) {
-        return MockData.authors.values()
-                .stream()
-                .filter(author -> author.getFullName().toLowerCase().contains(name.toLowerCase()))
-                .toList();
+        return authorRepository.searchByName(name);
     }
 
 
     @Override
     public Author save(Author author) {
-        author.setId(MockData.getNextId(Author.class));
-        doUpdate(author);
-        return author;
+        return authorRepository.save(author);
     }
 
     @Override
     public Author get(Long id) throws EntityNotFoundException {
-        return doGet(id);
+        return authorRepository.get(id);
     }
 
-    static Author doGet(Long id) throws EntityNotFoundException {
-        return Optional.ofNullable(MockData.authors.get(id))
-                .orElseThrow(() -> new EntityNotFoundException("Cannot find author with id: " + id));
-    }
 
     @Override
     public Collection<Author> list() {
-        return MockData.authors.values().stream().toList();
+        return authorRepository.all();
     }
 
     @Override
     public Author update(Author author) throws EntityNotFoundException {
-        get(author.getId());
-        doUpdate(author);
-        return MockData.authors.get(author.getId());
+        return authorRepository.save(author);
     }
 
     @Override
     public void delete(Long id) throws EntityNotFoundException, DeleteAuthorException {
-        Set<Book> books = get(id)
+        Author author = get(id);
+        if (author == null) {
+            throw new EntityNotFoundException("author with id=%d not found".formatted(id));
+        }
+        Set<Book> books = author
                 .getBooks();
         if (books != null) {
 
@@ -70,17 +78,15 @@ public class AuthorServiceMockImpl implements AuthorService {
                 throw new DeleteAuthorException("cannot delete author, one or several books are co-authored");
             }
 
-            books.stream().map(Book::getId).forEach(MockData.books::remove);
+            for (Book book : books) {
+                bookService.delete(book.getId());
+            }
 
         }
 
-        MockData.authors.remove(id);
+        authorRepository.delete(author);
 
 
-    }
-
-    private static void doUpdate(Author author) {
-        MockData.authors.put(author.getId(), author);
     }
 
 }

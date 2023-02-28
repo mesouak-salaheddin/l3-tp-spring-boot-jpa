@@ -1,6 +1,7 @@
-package fr.uga.l3miage.data.domain;
+package fr.uga.l3miage.library.data.domain;
 
 import java.util.Date;
+import java.util.Objects;
 
 public abstract class Person {
 
@@ -59,4 +60,15 @@ public abstract class Person {
         FEMALE, MALE, FLUID
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person person)) return false;
+        return gender == person.gender && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(birth, person.birth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(gender, firstName, lastName, birth);
+    }
 }
