@@ -3,7 +3,6 @@ package fr.uga.l3miage.library.data.domain;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class Borrow {
     private Long id;

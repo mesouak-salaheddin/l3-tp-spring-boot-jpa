@@ -11,6 +11,10 @@ public abstract class Person {
     private String lastName;
     private Date birth;
 
+    public enum Gender {
+        FEMALE, MALE, FLUID
+    }
+
     public String getId() {
         return id;
     }
@@ -46,10 +50,6 @@ public abstract class Person {
 
     public void setGender(Gender gender) {
         this.gender = gender;
-    }
-
-    public enum Gender {
-        FEMALE, MALE, FLUID
     }
 
     @Override
