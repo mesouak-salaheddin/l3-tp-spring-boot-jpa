@@ -1,9 +1,5 @@
 package fr.uga.l3miage.library.data.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -19,6 +15,9 @@ public class Author {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getFullName() {
         return fullName;
@@ -48,11 +47,11 @@ public class Author {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
-        return Objects.equals(fullName, author.fullName) && Objects.equals(books, author.books);
+        return Objects.equals(fullName, author.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fullName, books);
+        return Objects.hash(fullName);
     }
 }

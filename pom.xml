@@ -21,7 +21,6 @@
         <module>data</module>
         <module>service-pub</module>
         <module>service-impl</module>
-        <module>service-mock</module>
         <module>app</module>
     </modules>
 

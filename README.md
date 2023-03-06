@@ -184,4 +184,82 @@ Attention, ne soyez pas surpris, si il n'est pas implémenté, alors les tests d
 
 ## PARTIE 2: JPA
 
-A venir...
+Une fois un nouveau fork crée (voir Moodle) vous aurez à votre disposition la correction de la partie 1 et la partie 2 à completer.
+
+Voici le modèle à mapper sur la base.
+
+```mermaid
+classDiagram
+    Book "0..*" -- "1..*" Author
+    Person <|-- User
+    Person <|-- Librarian
+    Librarian "1..*" -- "1" Librarian : manager
+    Borrow "1" --> "1..*" Book
+    Borrow "1" --> "1" User: borrower
+    Borrow "1" --> "1" Librarian
+    <<Abstract>> Person
+    class Author {
+        Long id
+        String fullName  
+        addBook(Book)      
+    }
+    class Book {
+        Long id
+        String title
+        long isbn
+        String publisher
+        short year
+        String language
+        addAuthor(Author)
+    }
+    class Person {
+        Long id;
+        Gender gender;
+        String firstName;
+        String lastName;
+        Date birth;
+    }
+    class Librarian {
+        
+    }
+    class User {
+        Date registered;
+        float lateRatio;
+    }
+    class Borrow {
+        Long id;
+        Date start;
+        Date requestedReturn;
+    }
+```
+
+Vous devez:
+
+* Mapper les classes
+* Completer les Repository 
+* Completer quelques tests
+
+En exécutant `mvn clean verify` dans le répertoire `data` tous les tests devront passer. 
+Pour l'instant rien ne passe c'est normal.
+
+Déroulé: 
+
+* Mapper Book 
+* Mapper Author
+* Retirer @Transient de Book et finissez le mapping entre Book et author (many-to-many bi-directionel).
+* Terminer l'implémentation AuthorRepository
+  * Conseil:  Regarder les tests AuthorRepositoryTest (même conseil pour les autres repo)
+* Terminer l'implémentation BookRepository (un de code ici mais l'essentiel sera à faire dans Book)
+* Les tests BookRepositoryTest et AuthorRepositoryTest doivent passer 
+* Mapper la hierarchie de la classe Person (les sous classes sont User et Librarian) 
+* Completer l'implementation de LibrarianRepository et UserRepository
+* Le test fr.uga.l3miage.library.data.repo.PersonRepositoryTest.findAllOlderThan doit passer
+* Mapper Borrow (attention la relation Borrow->Book est trompeuse)
+* Completer l'implementation de BorrowRepository
+* Completer l'implementation BorrowRepositoryTest voir les commentaire "TODO"
+
+A ce stade tous les tests doivent passer.
+
+Vous joindrez au rendu un ou deux paragraphe en réponse aux "questions" suivantes:
+* Justifiez le choix de la stratégie de de mapping d'héritage.
+* Critiquez le modèle de donnée, il contient quelques erreurs de conception.

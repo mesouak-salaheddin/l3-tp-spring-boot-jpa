@@ -1,5 +1,7 @@
 package fr.uga.l3miage.library.data.domain;
 
+import jakarta.persistence.Transient;
+
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -12,12 +14,17 @@ public class Book {
     private String publisher;
     private short year;
     private Language language;
+
+    @Transient
     private Set<Author> authors;
 
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

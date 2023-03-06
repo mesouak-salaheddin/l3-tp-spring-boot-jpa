@@ -3,7 +3,6 @@ package fr.uga.l3miage.library.data.repo;
 import com.github.javafaker.Faker;
 import fr.uga.l3miage.library.data.domain.*;
 
-import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.HashSet;
@@ -45,13 +44,13 @@ public class Fixtures {
         return user;
     }
 
-    public static Borrow newBurrow(User user, Librarian librarian, Book... books) {
+    public static Borrow newBorrow(User user, Librarian librarian, Book... books) {
         Borrow borrow = new Borrow();
         borrow.setBorrower(user);
         borrow.setLibrarian(librarian);
-        borrow.setBooks(new HashSet<>(List.of(books)));
+        borrow.setBooks(List.of(books));
         borrow.setStart(FAKER.date().past(3 * 30, TimeUnit.DAYS));
-        borrow.setEnd(Date.from(borrow.getStart().toInstant().plus(30, ChronoUnit.DAYS)));
+        borrow.setRequestedReturn(Date.from(borrow.getStart().toInstant().plus(30, ChronoUnit.DAYS)));
         return borrow;
     }
 

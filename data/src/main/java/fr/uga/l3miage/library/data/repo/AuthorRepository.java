@@ -36,7 +36,8 @@ public class AuthorRepository implements CRUDRepository<Long, Author> {
 
     /**
      * Renvoie tous les auteurs
-     * @return une liste d'auteurs
+     *
+     * @return une liste d'auteurs trié par nom
      */
     @Override
     public List<Author> all() {
@@ -45,19 +46,22 @@ public class AuthorRepository implements CRUDRepository<Long, Author> {
     }
 
     /**
-     *  Recherche un auteur par nom (ou partie du nom) de façon insensible  à la casse.
-     * @return une liste d'auteurs
+     * Recherche un auteur par nom (ou partie du nom) de façon insensible  à la casse.
+     *
+     * @param namePart tout ou partie du nomde l'auteur
+     * @return une liste d'auteurs trié par nom
      */
-    public List<Author> searchByName(String namePat) {
+    public List<Author> searchByName(String namePart) {
         // TODO
         return null;
     }
 
     /**
-     * Recherche les auteurs ayant au moins un livre co-écrit avec un autre auteur
-     * @return
+     * Recherche si l'auteur a au moins un livre co-écrit avec un autre auteur
+     *
+     * @return true si l'auteur partage
      */
-    public boolean findAuthorByIdHavingCoAuthoredBooks(long id) {
+    public boolean checkAuthorByIdHavingCoAuthoredBooks(long authorId) {
         // TODO
         return false;
     }

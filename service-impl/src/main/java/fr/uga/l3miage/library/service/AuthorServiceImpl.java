@@ -1,15 +1,10 @@
-package fr.uga.l3miage.service;
+package fr.uga.l3miage.library.service;
 
 import fr.uga.l3miage.library.data.domain.Author;
 import fr.uga.l3miage.library.data.domain.Book;
 import fr.uga.l3miage.library.data.repo.AuthorRepository;
-import fr.uga.l3miage.library.service.AuthorService;
-import fr.uga.l3miage.library.service.BookService;
-import fr.uga.l3miage.library.service.DeleteAuthorException;
-import fr.uga.l3miage.library.service.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

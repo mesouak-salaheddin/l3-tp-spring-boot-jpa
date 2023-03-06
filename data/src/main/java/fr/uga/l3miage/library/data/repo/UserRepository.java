@@ -1,6 +1,5 @@
 package fr.uga.l3miage.library.data.repo;
 
-import fr.uga.l3miage.library.data.domain.Librarian;
 import fr.uga.l3miage.library.data.domain.User;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserRepository implements CRUDRepository<Long, User> {
+public class UserRepository implements CRUDRepository<String, User> {
 
     private final EntityManager entityManager;
 
@@ -25,7 +24,7 @@ public class UserRepository implements CRUDRepository<Long, User> {
     }
 
     @Override
-    public User get(Long id) {
+    public User get(String id) {
         return entityManager.find(User.class, id);
     }
 
@@ -37,6 +36,16 @@ public class UserRepository implements CRUDRepository<Long, User> {
     @Override
     public List<User> all() {
         return entityManager.createQuery("from User", User.class).getResultList();
+    }
+
+    /**
+     * Trouve tous les utilisateurs ayant plus de l'age passé
+     * @param age l'age minimum de l'utilisateur
+     * @return
+     */
+    public List<User> findAllOlderThan(int age) {
+        // TODO
+        return null;
     }
 
 }

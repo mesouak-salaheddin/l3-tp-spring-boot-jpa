@@ -1,7 +1,6 @@
 package fr.uga.l3miage.library.data.repo;
 
 import fr.uga.l3miage.library.data.domain.Borrow;
-import fr.uga.l3miage.library.data.domain.Librarian;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -40,27 +39,42 @@ public class BorrowRepository implements CRUDRepository<String, Borrow> {
     }
 
     /**
-     * @param userId
-     * @return
+     * Trouver des emprunts en cours pour un emprunteur donné
+     *
+     * @param userId l'id de l'emprunteur
+     * @return la liste des emprunts en cours
      */
-    public List<Borrow> findInProgressByUser(Long userId) {
+    public List<Borrow> findInProgressByUser(String userId) {
         // TODO
         return null;
     }
 
     /**
+     * Compte le nombre total de livres emprunté par un utilisateur.
      *
-     * @param userId
-     * @return
+     * @param userId l'id de l'emprunteur
+     * @return le nombre de livre
      */
-    public int countBorrowedBooksByUser(Long userId) {
+    public int countBorrowedBooksByUser(String userId) {
         // TODO
         return 0;
     }
 
     /**
+     * Compte le nombre total de livres non rendu par un utilisateur.
      *
-     * @return
+     * @param userId l'id de l'emprunteur
+     * @return le nombre de livre
+     */
+    public int countCurrentBorrowedBooksByUser(String userId) {
+        // TODO
+        return 0;
+    }
+
+    /**
+     * Recherche tous les emprunt en retard trié
+     *
+     * @return la liste des emprunt en retard
      */
     public List<Borrow> foundAllLateBorrow() {
         // TODO
@@ -68,11 +82,12 @@ public class BorrowRepository implements CRUDRepository<String, Borrow> {
     }
 
     /**
+     * Calcul les emprunts qui seront en retard entre maintenant et x jours.
      *
-     * @param days
-     * @return
+     * @param days le nombre de jour avant que l'emprunt soit en retard
+     * @return les emprunt qui sont bientôt en retard
      */
-    public List<Borrow> foundAllBorrowThatWillBeLateInDays(int days) {
+    public List<Borrow> findAllBorrowThatWillLateWithin(int days) {
         // TODO
         return null;
     }

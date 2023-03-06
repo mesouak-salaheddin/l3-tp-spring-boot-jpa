@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class LibrarianRepository implements CRUDRepository<Long, Librarian> {
+public class LibrarianRepository implements CRUDRepository<String, Librarian> {
 
     private final EntityManager entityManager;
 
@@ -24,7 +24,7 @@ public class LibrarianRepository implements CRUDRepository<Long, Librarian> {
     }
 
     @Override
-    public Librarian get(Long id) {
+    public Librarian get(String id) {
         return entityManager.find(Librarian.class, id);
     }
 
@@ -38,6 +38,10 @@ public class LibrarianRepository implements CRUDRepository<Long, Librarian> {
         return entityManager.createQuery("from Librarian", Librarian.class).getResultList();
     }
 
+    /**
+     * Récupere les bibliothéquaires ayant enregistré le plus de prêts
+     * @return les bibliothéquaires les plus actif
+     */
     public List<Librarian> top3WorkingLibrarians() {
         // TODO
         return null;
