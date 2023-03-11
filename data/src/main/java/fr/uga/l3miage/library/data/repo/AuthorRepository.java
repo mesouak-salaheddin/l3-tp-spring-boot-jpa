@@ -2,6 +2,8 @@ package fr.uga.l3miage.library.data.repo;
 
 import fr.uga.l3miage.library.data.domain.Author;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -28,7 +30,6 @@ public class AuthorRepository implements CRUDRepository<Long, Author> {
         return entityManager.find(Author.class, id);
     }
 
-
     @Override
     public void delete(Author author) {
         entityManager.remove(author);
@@ -42,18 +43,31 @@ public class AuthorRepository implements CRUDRepository<Long, Author> {
     @Override
     public List<Author> all() {
         // TODO
-        return null;
+
+        return entityManager.createQuery("SELECT a FROM Author a ORDER BY a.name", Author.class)
+                .getResultList();
+
+        /*
+         * return entityManager.createQuery("select * from Author", Author.class)
+         * .getResultList();
+         */
     }
 
     /**
-     * Recherche un auteur par nom (ou partie du nom) de façon insensible  à la casse.
+     * Recherche un auteur par nom (ou partie du nom) de façon insensible à la
+     * casse.
      *
      * @param namePart tout ou partie du nomde l'auteur
      * @return une liste d'auteurs trié par nom
      */
     public List<Author> searchByName(String namePart) {
         // TODO
-        return null;
+
+        return entityManager.createQuery(
+                "SELECT a FROM Author a WHERE a.fullName LIKE CONCAT('%', :namePart, '%')",
+                Author.class)
+                .setParameter("namePart", namePart)
+                .getResultList();
     }
 
     /**
@@ -63,7 +77,12 @@ public class AuthorRepository implements CRUDRepository<Long, Author> {
      */
     public boolean checkAuthorByIdHavingCoAuthoredBooks(long authorId) {
         // TODO
-        return false;
+
+        return entityManager.createQuery(
+                "SELECT COUNT(DISTINCT a2) FROM Book b1 JOIN b1.authors a1 JOIN b1.authors a2 WHERE a1.id = :authorId AND a2.id <> :authorId",
+                Long.class)
+                .setParameter("authorId", authorId)
+                .getSingleResult() > 0;
     }
 
 }
